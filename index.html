@@ -13,12 +13,12 @@
 
     <!-- Capa de fondo fija para toda la página web -->
     <div class="main-jungle-background"></div>
-    <!-- Capa oscura superpuesta para que las letras y fotos de los platos resalten perfectamente -->
+    <!-- Capa oscura superpuesta adaptada para mantener el contraste exacto -->
     <div class="background-overlay"></div>
 
     <div class="content-wrapper">
         
-        <!-- HERO PRINCIPAL (Inspirado en la fuerza visual de image_b269e6.png) -->
+        <!-- HERO PRINCIPAL (Optimizado para centrado perfecto en PC y Móviles) -->
         <header class="hero-header">
             <div class="serpent-totem">🐍</div>
             <div class="hero-titles">
@@ -44,6 +44,7 @@
 
             <div id="video-pane" class="tab-content">
                 <p class="video-desc">Visualiza rápidamente nuestras instalaciones y cómo asegurar tu mesa hoy mismo:</p>
+                <!-- Contenedor adaptativo para que el video no se deforme en celulares -->
                 <div class="video-responsive-container">
                     <video controls poster="https://via.placeholder.com/800x450/0b0f0c/da121a?text=VIDEO+RESTAURANTE">
                         <source src="videocomida.mp4" type="video/mp4">
@@ -53,7 +54,7 @@
             </div>
         </section>
 
-        <!-- SECCIÓN DE ACCIÓN 2: RUTA DE ACCESO GOOGLE MAPS -->
+        <!-- SECCIÓN DE ACCIÓN 2: RUTA DE ACCESO GOOGLE MAPS (Estructura Flex-Adaptable) -->
         <section class="glass-section maps-container">
             <div class="maps-text">
                 <span class="geo-icon">📍</span>
@@ -66,13 +67,14 @@
         <main class="menu-section">
             <h3 class="menu-main-title">🔥 Especialidades Destacadas de Hoy</h3>
             
+            <!-- Grid que pasa automáticamente de 1 columna en móvil a 3 en PC gracias al CSS anterior -->
             <div class="menu-grid">
                 
                 <!-- Plato 1 -->
                 <article class="food-premium-card">
                     <div class="food-img-wrapper">
                         <span class="culture-tag">Tradición</span>
-                        <img src="tacacho.jpg" alt="Tacacho con Cecina" onerror="this.src='https://via.placeholder.com/500x380/0d110e/ffffff?text=TACACHO+CON+CECINA'">
+                        <img src="tacacho.jpg" alt="Juane de la Selva Especial" onerror="this.src='https://via.placeholder.com/500x380/0d110e/ffffff?text=JUANE+ESPECIAL'">
                     </div>
                     <div class="food-details">
                         <h4>Juane de la Selva Especial</h4>
@@ -96,8 +98,8 @@
 
                 <!-- Plato 3 -->
                 <article class="food-premium-card">
-                    <div class="culture-tag-special">Recomendado</div>
                     <div class="food-img-wrapper">
+                        <span class="culture-tag-special">Recomendado</span>
                         <img src="chicharron.jpg" alt="Chicharrón Amazónico" onerror="this.src='https://via.placeholder.com/500x380/0d110e/ffffff?text=CHICHARRON+AMAZONICO'">
                     </div>
                     <div class="food-details">
