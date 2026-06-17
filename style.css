@@ -43,7 +43,6 @@ body {
 }
 
 /* Capa de control ultra limpia: Sin iluminación blanca, solo un tinte oscuro parejo */
-/* Esto hace que la imagen se note perfectamente y los textos no se pierdan */
 .background-overlay {
     position: fixed;
     top: 0;
@@ -79,14 +78,26 @@ body {
     animation: serpent-wave 5s ease-in-out infinite;
 }
 
+.hero-titles {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
 .hero-titles h1 {
     font-size: 5.5rem;
     font-weight: 900;
     letter-spacing: 14px;
+    text-indent: 14px; /* Centra el texto en PC compensando el espacio extra derecho */
     text-transform: uppercase;
     color: var(--pure-white);
     line-height: 1.1;
     text-shadow: 0 4px 15px rgba(0, 0, 0, 0.8);
+    width: 100%;
 }
 
 .hero-titles h2 {
@@ -94,6 +105,7 @@ body {
     font-weight: 700;
     color: var(--cool-yellow); /* Segundo título en el amarillo claro cool */
     letter-spacing: 8px;
+    text-indent: 8px;
     margin-top: 10px;
     text-transform: uppercase;
     text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
@@ -102,6 +114,7 @@ body {
 .subtitle {
     font-size: 0.95rem;
     letter-spacing: 6px;
+    text-indent: 6px;
     color: var(--text-muted);
     margin-top: 25px;
     text-transform: uppercase;
@@ -138,7 +151,11 @@ body {
 }
 
 /* Control de Pestañas */
-.tab-buttons { display: flex; gap: 10px; margin-bottom: 25px; }
+.tab-buttons { 
+    display: flex; 
+    gap: 10px; 
+    margin-bottom: 25px; 
+}
 .tab-link {
     background: transparent;
     border: 1px solid var(--border-minimal);
@@ -340,11 +357,62 @@ body {
     60% { transform: translateY(-3px); }
 }
 
-/* Adaptabilidad Celular */
+/* ==========================================================================
+   ADAPTABILIDAD ULTRA-RESPONSIVA (MÓVIL Y TABLETS) 
+   ========================================================================== */
 @media (max-width: 768px) {
-    .hero-titles h1 { font-size: 3.2rem; letter-spacing: 6px; }
-    .hero-titles h2 { font-size: 1.5rem; letter-spacing: 4px; }
-    .maps-container { flex-direction: column; text-align: center; }
-    .maps-text { max-width: 100%; flex-direction: column; }
-    .maps-glow-btn { width: 100%; }
+    .hero-header { 
+        height: 85vh; /* Evita desbordamiento vertical en pantallas táctiles */
+        padding: 0 10px; 
+    }
+    
+    /* Resuelve la ruptura y desalineación vista en image_a6ea9c.png */
+    .hero-titles h1 { 
+        font-size: 2.3rem !important; /* Escalado perfecto para smartphones */
+        letter-spacing: 3px !important; /* Reduce drásticamente la separación rígida */
+        text-indent: 3px !important; /* Sincroniza el balance de centrado */
+        line-height: 1.2;
+    }
+    
+    .hero-titles h2 { 
+        font-size: 1.25rem !important; 
+        letter-spacing: 2px !important; 
+        text-indent: 2px !important;
+        margin-top: 12px;
+    }
+    
+    .hero-titles .subtitle {
+        font-size: 0.75rem !important;
+        letter-spacing: 3px !important;
+        text-indent: 3px !important;
+        padding: 0 15px;
+    }
+
+    /* Solución de centrado para el contenedor translúcido de image_a6ea7e.png */
+    .tab-buttons { 
+        justify-content: center; /* Alinea los botones perfectamente al centro de la tarjeta */
+        width: 100%;
+        gap: 8px;
+    }
+    
+    .tab-link {
+        padding: 10px 16px; /* Ajusta el espacio interior para que no se apilen toscamente */
+        font-size: 0.75rem;
+    }
+
+    /* Ajustes generales del cuerpo del mapa de Google */
+    .maps-container { 
+        flex-direction: column; 
+        text-align: center; 
+        padding: 30px 20px;
+    }
+    .maps-text { 
+        max-width: 100%; 
+        flex-direction: column; 
+        justify-content: center;
+    }
+    .maps-glow-btn { 
+        width: 100%; 
+        text-align: center;
+    }
 }
