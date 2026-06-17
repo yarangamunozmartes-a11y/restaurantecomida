@@ -20,7 +20,7 @@
 }
 
 /* ==========================================================================
-   2. CONFIGURACIÓN DE PANTALLA Y RESET
+   2. CONFIGURACIÓN DE PANTALLA Y RESET (Cero desajustes)
    ========================================================================== */
 * { 
     box-sizing: border-box; 
@@ -34,6 +34,7 @@ body {
     color: var(--pure-white);
     min-height: 100vh;
     overflow-x: hidden;
+    width: 100%;
 }
 
 /* ==========================================================================
@@ -53,7 +54,6 @@ body {
     transform: scale(1.02); 
 }
 
-/* Capa de control uniforme para dar contraste sin alterar los colores de la foto */
 .background-overlay {
     position: fixed;
     top: 0;
@@ -69,10 +69,11 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px 80px 20px;
+    width: 100%;
 }
 
 /* ==========================================================================
-   4. HERO SECTION (Centrado Matemático Avanzado)
+   4. HERO SECTION (Eje de Simetría Absoluto para el Título)
    ========================================================================== */
 .hero-header {
     height: 95vh; 
@@ -82,7 +83,8 @@ body {
     align-items: center;
     text-align: center;
     position: relative;
-    padding: 0 20px;
+    width: 100%;
+    padding: 0; /* Eliminamos rellenos que empujen la caja hacia los lados */
 }
 
 .serpent-totem {
@@ -93,52 +95,62 @@ body {
     display: inline-block;
 }
 
+/* Contenedor maestro de títulos: Forzado al centro milimétrico */
 .hero-titles {
     width: 100%;
-    max-width: 1000px;
-    margin: 0 auto;
+    max-width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center; 
     justify-content: center;
+    text-align: center;
+    margin: 0 auto;
 }
 
 .hero-titles h1 {
     font-size: 5.5rem;
     font-weight: 900;
-    letter-spacing: 14px;
-    text-indent: 14px; /* CORRECCIÓN PC: Neutraliza el espacio fantasma de la última letra */
     text-transform: uppercase;
     color: var(--pure-white);
     line-height: 1.1;
     text-shadow: 0 4px 15px rgba(0, 0, 0, 0.8);
     width: 100%;
     text-align: center;
+    margin: 0;
+    padding: 0;
+    
+    /* Sincronización de espaciado: Se compensa a ambos lados por igual */
+    letter-spacing: 14px;
+    text-indent: 14px; 
 }
 
 .hero-titles h2 {
     font-size: 2rem;
     font-weight: 700;
     color: var(--cool-yellow); 
-    letter-spacing: 8px;
-    text-indent: 8px; /* Equilibra el espaciado del subtítulo */
     margin-top: 10px;
     text-transform: uppercase;
     text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
     width: 100%;
     text-align: center;
+    
+    /* Sincronización de espaciado */
+    letter-spacing: 8px;
+    text-indent: 8px; 
 }
 
 .subtitle {
     font-size: 0.95rem;
-    letter-spacing: 6px;
-    text-indent: 6px; 
     color: var(--text-muted);
     margin-top: 25px;
     text-transform: uppercase;
     font-weight: 400;
     width: 100%;
     text-align: center;
+    
+    /* Sincronización de espaciado */
+    letter-spacing: 6px;
+    text-indent: 6px; 
 }
 
 .scroll-indicator {
@@ -225,7 +237,7 @@ body {
 
 .video-responsive-container {
     position: relative;
-    padding-bottom: 56.25%; /* Relación de aspecto 16:9 */
+    padding-bottom: 56.25%; 
     height: 0;
     border-radius: 6px;
     overflow: hidden;
@@ -242,7 +254,7 @@ body {
 }
 
 /* ==========================================================================
-   6. SECCIÓN GOOGLE MAPS (Plomo Elegante + Verde Activo)
+   6. SECCIÓN GOOGLE MAPS
    ========================================================================== */
 .maps-container {
     display: flex;
@@ -293,7 +305,7 @@ body {
 }
 
 /* ==========================================================================
-   7. CARTA DE MENÚ Y TARJETAS PREMIUM
+   7. CARTA DE MENÚ Y TARJETAS
    ========================================================================== */
 .menu-main-title {
     font-size: 1.8rem;
@@ -355,7 +367,6 @@ body {
     transition: transform 0.6s ease;
 }
 
-/* Etiquetas dinámicas sobre las Fotos */
 .culture-tag, .culture-tag-special {
     position: absolute;
     top: 15px; 
@@ -400,7 +411,6 @@ body {
     margin-bottom: 25px; 
 }
 
-/* Disparador de Reservas WhatsApp */
 .whatsapp-trigger-btn {
     background: transparent;
     border: 1px solid var(--border-minimal);
@@ -436,40 +446,50 @@ body {
 }
 
 /* ==========================================================================
-   9. MEDIA QUERIES (Adaptabilidad Absoluta para Smartphones)
+   9. MEDIA QUERIES (Alineación Simétrica de Precisión para Celulares)
    ========================================================================== */
 @media (max-width: 768px) {
     .hero-header { 
         height: 85vh; 
-        padding: 0 15px; 
+        padding: 0 10px; 
     }
     
-    /* Solución de empaquetado para 'RESTAURANTE' */
+    .hero-titles {
+        width: 100%;
+        margin: 0 auto;
+        padding: 0;
+    }
+
+    /* Equilibrio exacto para que no se desplace al lado derecho */
     .hero-titles h1 { 
         font-size: 2.3rem !important; 
-        letter-spacing: 3px !important; 
-        text-indent: 3px !important; 
+        letter-spacing: 2px !important; 
+        text-indent: 2px !important; /* Igualamos al píxel exacto el espaciado interno */
         line-height: 1.2;
+        width: 100%;
+        text-align: center;
     }
     
     .hero-titles h2 { 
         font-size: 1.25rem !important; 
         letter-spacing: 2px !important; 
-        text-indent: 2px !important;
+        text-indent: 2px !important; 
         margin-top: 12px;
+        width: 100%;
+        text-align: center;
     }
     
-    /* Solución del error de image_a68279.png (Mantiene la frase unida y en escala fluida) */
     .hero-titles .subtitle {
         font-size: 3.2vw !important; 
-        letter-spacing: 1.5px !important;
-        text-indent: 1.5px !important;
+        letter-spacing: 1px !important;
+        text-indent: 1px !important; 
         margin-top: 20px;
         white-space: nowrap; 
-        width: auto;
+        width: 100%;
+        text-align: center;
     }
 
-    /* Centrado de pestañas de control de image_a6ea7e.png */
+    /* Centrado de pestañas de control */
     .tab-buttons { 
         justify-content: center; 
         width: 100%;
