@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AMAZONIA | Sabor e Identidad Peruana</title>
+    <!-- Enlace al archivo de diseño estético -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Fuente moderna e imponente para los títulos -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Capa de fondo fija para toda la página web -->
+    <div class="main-jungle-background"></div>
+    <!-- Capa oscura superpuesta para que las letras y fotos de los platos resalten perfectamente -->
+    <div class="background-overlay"></div>
+
+    <div class="content-wrapper">
+        
+        <!-- HERO PRINCIPAL (Inspirado en la fuerza visual de image_b269e6.png) -->
+        <header class="hero-header">
+            <div class="serpent-totem">🐍</div>
+            <div class="hero-titles">
+                <h1>RESTAURANTE</h1>
+                <h2>COMIDA PERUANA</h2>
+                <p class="subtitle">AUTÉNTICO SABOR DE LA SELVA</p>
+            </div>
+            <div class="scroll-indicator">↓</div>
+        </header>
+
+        <!-- SECCIÓN DE ACCIÓN 1: INFÓRMESE PRIMERO -->
+        <section class="glass-section rules-container">
+            <h3>⚠️ Proceso de Atención y Reserva Directa</h3>
+            
+            <div class="tab-buttons">
+                <button class="tab-link active" onclick="changeTab('text-pane')">Instrucciones</button>
+                <button class="tab-link" onclick="changeTab('video-pane')">Video Explicativo</button>
+            </div>
+
+            <div id="text-pane" class="tab-content active">
+                <p><strong>Atención Directa y Sin Demoras:</strong> Elige tu plato del día ➔ Presiona el botón de reserva ➔ Envía el mensaje automático por WhatsApp con tus datos. Todo listo al instante. Rediseñamos la experiencia tradicional para valorar tu tiempo.</p>
+            </div>
+
+            <div id="video-pane" class="tab-content">
+                <p class="video-desc">Visualiza rápidamente nuestras instalaciones y cómo asegurar tu mesa hoy mismo:</p>
+                <div class="video-responsive-container">
+                    <video controls poster="https://via.placeholder.com/800x450/0b0f0c/da121a?text=VIDEO+RESTAURANTE">
+                        <source src="videocomida.mp4" type="video/mp4">
+                        Tu navegador no soporta video.
+                    </video>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN DE ACCIÓN 2: RUTA DE ACCESO GOOGLE MAPS -->
+        <section class="glass-section maps-container">
+            <div class="maps-text">
+                <span class="geo-icon">📍</span>
+                <p>¿Estás listo para la experiencia? Activa tu GPS y ven a visitarnos en tiempo real.</p>
+            </div>
+            <a href="https://maps.app.goo.gl/eG7TjWRZbcn53QyH8" target="_blank" class="maps-glow-btn">Abrir Google Maps</a>
+        </section>
+
+        <!-- SECCIÓN DE ACCIÓN 3: CATÁLOGO DE PLATOS POPULARES -->
+        <main class="menu-section">
+            <h3 class="menu-main-title">🔥 Especialidades Destacadas de Hoy</h3>
+            
+            <div class="menu-grid">
+                
+                <!-- Plato 1 -->
+                <article class="food-premium-card">
+                    <div class="food-img-wrapper">
+                        <span class="culture-tag">Tradición</span>
+                        <img src="tacacho.jpg" alt="Tacacho con Cecina" onerror="this.src='https://via.placeholder.com/500x380/0d110e/ffffff?text=TACACHO+CON+CECINA'">
+                    </div>
+                    <div class="food-details">
+                        <h4>Juane de la Selva Especial</h4>
+                        <div class="price-tag">S/. 25.00</div>
+                        <button class="whatsapp-trigger-btn" onclick="sendOrder('Juane de la Selva Especial', 25.00)">Reservar Mesa / Pedir</button>
+                    </div>
+                </article>
+
+                <!-- Plato 2 -->
+                <article class="food-premium-card">
+                    <div class="food-img-wrapper">
+                        <span class="culture-tag">El Más Pedido</span>
+                        <img src="tacachoselva.jpg" alt="Tacacho con Cecina" onerror="this.src='https://via.placeholder.com/500x380/0d110e/ffffff?text=TACACHO+CON+CECINA'">
+                    </div>
+                    <div class="food-details">
+                        <h4>Tacacho con Cecina de la Casa</h4>
+                        <div class="price-tag">S/. 28.00</div>
+                        <button class="whatsapp-trigger-btn" onclick="sendOrder('Tacacho con Cecina de la Casa', 28.00)">Reservar Mesa / Pedir</button>
+                    </div>
+                </article>
+
+                <!-- Plato 3 -->
+                <article class="food-premium-card">
+                    <div class="culture-tag-special">Recomendado</div>
+                    <div class="food-img-wrapper">
+                        <img src="chicharron.jpg" alt="Chicharrón Amazónico" onerror="this.src='https://via.placeholder.com/500x380/0d110e/ffffff?text=CHICHARRON+AMAZONICO'">
+                    </div>
+                    <div class="food-details">
+                        <h4>Chicharrón de Pisingo Especial</h4>
+                        <div class="price-tag">S/. 30.00</div>
+                        <button class="whatsapp-trigger-btn" onclick="sendOrder('Chicharrón de Pisingo Especial', 30.00)">Reservar Mesa / Pedir</button>
+                    </div>
+                </article>
+
+            </div>
+        </main>
+
+    </div>
+
+    <!-- Enlace a la lógica dinámica de WhatsApp -->
+    <script src="script.js"></script>
+</body>
+</html>
